@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.*;
 
 public class Json {
 
-    private static ObjectMapper objectMapper = defaultObjectMapper();
+    private static final ObjectMapper objectMapper = defaultObjectMapper();
 
     private static ObjectMapper defaultObjectMapper() {
         ObjectMapper om = new ObjectMapper();
@@ -29,12 +29,12 @@ public class Json {
         return objectMapper.valueToTree(object);
     }
 
-    public static String stringfy(JsonNode jsonNode) throws JsonProcessingException {
+    public static String stringify(JsonNode jsonNode) throws JsonProcessingException {
 
         return generateJson(jsonNode, false);
     }
 
-    public static String stringfyPretty(JsonNode jsonNode) throws JsonProcessingException {
+    public static String stringifyPretty(JsonNode jsonNode) throws JsonProcessingException {
 
         return generateJson(jsonNode, true);
     }
